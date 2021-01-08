@@ -5,7 +5,7 @@ import "./markdown.css";
 const defaultPlaceholder = `# React Markdown Parser!
 ### You can type any markdown text here and it will parsed and shown beside
   
-Heres some code, \`<div></div>\`, between 2 backticks.
+Here is some code, \`<div></div>\`, between 2 backticks. You can also write multiLineCode
 \`\`\`
 // this is multi-line code:
 function someFunction(firstLine, lastLine) {
@@ -20,6 +20,8 @@ Or _italic_.
 Or... wait for it... **_both!_**
 And feel free to go crazy ~~crossing stuff out~~.
 There's also [links](https://github.com/mrinmay-santra), and lot more interesting things
+
+Here is an [article](https://www.markdownguide.org/cheat-sheet/) where you can read more about Markdown syntax
 `;
 
 function Markdown(props) {
@@ -31,8 +33,8 @@ function Markdown(props) {
         {/* <Topbar text="This is editor section" icon={<i class="fas fa-edit fa-lg icons" ></i>} /> */}
         
             <div  >
-              <h3 className="topbar-heading" style={{backgroundColor: 'lightblue', padding:"10px",width:"100%"}} >
-                  <i className="fas fa-edit fa-lg icons"></i>This is the editor section</h3>
+              <h3 className="topbar-heading" style={{ padding:"10px",width:"100%",}} >
+                  <i className="fas fa-edit fa-lg icons"></i>Editor section</h3>
             </div>
             <textarea
               className="input"
@@ -51,7 +53,7 @@ function Markdown(props) {
 
             <div style={{marginRight:"0px"}}  >
               <h3 className="topbar-heading" >
-                  <i className="fas fa-tv icons"></i>This is the viewer section</h3>
+                  <i className="fas fa-tv icons"></i>Viewer section</h3>
             </div>
 
 
