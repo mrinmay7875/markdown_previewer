@@ -7,9 +7,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: send custom message with args
-      uses: appleboy/telegram-action@master
+    - name: Telegram Message Notify
+      uses: appleboy/telegram-action@v0.1.0
+
       with:
         to: ${{ secrets.TELEGRAM_CHAT_ID }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         args: The ${{ github.event_name }} event triggered first step. Please check- Mrinmay!!
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: 'Thanks for rasing the issue. We will check and get back to you'
+        pr-message: 'Thanks for submitting pull request. We will check and get back to you'
